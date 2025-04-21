@@ -204,10 +204,10 @@
         
     // }
     #what_do_i_do {
-        width: 100%;
+        width: 100% !important;
         height: calc(100vh + 30px);
         background-color: #000000a4;
-        // position: static;
+        padding: 50px 0;
       
         .pro_container {
           .what_do_i_do_wrapper {
@@ -216,7 +216,6 @@
             display: flex;
       
             .progress_container {
-              background-color: rgb(0, 0, 0);
               width: 40%;
               display: flex;
               flex-direction: column;
@@ -248,6 +247,7 @@
                  display: flex;
                  align-items: center;
                  justify-content: center;
+                 cursor: pointer;
                 }
       
                 .pro_indicator:nth-child(1) {

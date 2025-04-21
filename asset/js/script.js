@@ -2,11 +2,15 @@ let isFixed = false;
 let what_do_i_do = document.getElementById("what_do_i_do");
 let ScrollToTop = window.scrollY;
 const pro_indicator = document.querySelectorAll('.pro_indicator');
+let text = "Plan and Plot";
+const what_do_i_do_image = document.getElementById('what_do_i_do_image');
+const what_do_i_do_heading = document.getElementById('what_do_i_do_heading');
+const what_do_i_do_pragraph = document.getElementById('what_do_i_do_pragraph');
 
 window.addEventListener("scroll", () => {
   console.log("Scroll Top:", window.scrollY);
   let ScrollToTop = window.scrollY;
-
+  
   let topValue;
   if (ScrollToTop > 857) {
     topValue = Math.round(ScrollToTop - 857);
@@ -34,14 +38,21 @@ window.addEventListener("scroll", () => {
 //   }
   //-------------------------------
   console.log(pro_indicator[0]);
+  if(ScrollToTop > 1700){
+    what_do_i_do.style.position = "static";
+}
   
   if(ScrollToTop > 1725){
-      console.log(ScrollToTop);
       what_do_i_do.style.position = "fixed";
+      what_do_i_do.style.width = "100%";
       what_do_i_do.style.top = "0";
       what_do_i_do.style.left = "0";
       what_do_i_do.style.zIndex = "999";
       what_do_i_do.style.width = "100%";
+      what_do_i_do.style.backgroundColor = "black";
+      what_do_i_do_heading.innerHTML = "Highlights and Challenges";
+      what_do_i_do_image.src = "./asset/images/60.jpeg";
+      pro_indicator[0].style.backgroundColor ="gray";
   }
  
   if(ScrollToTop >= 1740){
@@ -49,18 +60,27 @@ window.addEventListener("scroll", () => {
     pro_indicator[0].style.width = "40px";
     pro_indicator[0].style.height = "40px";
     pro_indicator[0].style.border = "3px solid red";
+    pro_indicator[1].innerHTML=''
   }
   if(ScrollToTop >= 1790){
     document.querySelector('.line').style.backgroundSize ='100% 300%';
     pro_indicator[1].style.width = "20px";
     pro_indicator[1].style.height = "20px";
     pro_indicator[1].style.border = "1px solid transparent";
+    pro_indicator[1].innerHTML='02';
+    // --change first indicaator--
+    pro_indicator[0].innerHTML='';
+    pro_indicator[0].style.backgroundColor ="red";
+    pro_indicator[0].style.width ="20px";
+    pro_indicator[0].style.height ="20px";
   }
   if(ScrollToTop >= 1840){
     document.querySelector('.line').style.backgroundSize ='100% 400%';
     pro_indicator[1].style.width = "40px";
     pro_indicator[1].style.height = "40px";
     pro_indicator[1].style.border = "3px solid red";
+    what_do_i_do_heading.innerHTML = "Plan and Plot";
+    what_do_i_do_image.src = "./asset/images/62.jpeg";
 
   }
   if(ScrollToTop >= 1890){
@@ -68,12 +88,17 @@ window.addEventListener("scroll", () => {
     pro_indicator[2].style.width = "20px";
     pro_indicator[2].style.height = "20px";
     pro_indicator[2].style.border = "1px solid transparent";
+    pro_indicator[2].innerHTML=''
   }
   if(ScrollToTop >= 1940){
     document.querySelector('.line').style.backgroundSize ='100% 600%';
     pro_indicator[2].style.width = "40px";
     pro_indicator[2].style.height = "40px";
     pro_indicator[2].style.border = "3px solid red";
+    pro_indicator[2].innerHTML='03';
+    what_do_i_do_heading.innerHTML = "Shape and Mold";
+    what_do_i_do_image.src = "./asset/images/63.jpeg";
+    
   }
   if(ScrollToTop >= 1990){
     document.querySelector('.line').style.backgroundSize ='100% 700%'
@@ -84,73 +109,30 @@ window.addEventListener("scroll", () => {
     pro_indicator[3].style.width = "20px";
     pro_indicator[3].style.height = "20px";
     pro_indicator[3].style.border = "1px solid transparent";
+    pro_indicator[3].innerHTML=''
   }
   if(ScrollToTop >= 2090){
     document.querySelector('.line').style.backgroundSize ='100% 900%';
     pro_indicator[3].style.width = "40px";
     pro_indicator[3].style.height = "40px";
     pro_indicator[3].style.border = "3px solid red";
+    pro_indicator[3].innerHTML='04';
+    what_do_i_do_heading.innerHTML = "Guide and Assist";
+    what_do_i_do_image.src = "./asset/images/64.jpeg";
   }
   if(ScrollToTop >= 2140){
-    document.querySelector('.line').style.backgroundSize ='100% 1000%'
+    document.querySelector('.line').style.backgroundSize ='100% 1000%';
   }
-// if(isFixed == "true" && ScrollToTop < 1750){
-//     isFixed = "false"
-//   }
-  
-  
-  
-  console.log(isFixed);
-  if(isFixed =="true"){
-    what_do_i_do.style.position = "fixed";
-  what_do_i_do.style.top = "0";
-  what_do_i_do.style.zIndex = "999";
-  }
-  if(isFixed =="false"){
+  if(ScrollToTop >= 2190){
     what_do_i_do.style.position = "static";
   }
+
+  
+  
+ 
+
+  
   
   
 });
 
-function fixedWhatDo() {
-  what_do_i_do.style.position = "fixed";
-  what_do_i_do.style.top = "0";
-  what_do_i_do.style.zIndex = "999";
-}
-function staticWhatDo(){
-    what_do_i_do.style.position = "static";
-}
-
-// window.addEventListener("scroll",()=>{
-//     console.log("Scroll Top:", window.scrollY);
-//     let ScrollToTop = window.scrollY;
-//     let topValue ;
-//     if(ScrollToTop > 857){
-//          topValue =   Math.round(ScrollToTop - 857 );
-//         console.log(topValue);
-//         document.getElementById("Disrupt").style.position = "fixed";
-//         document.getElementById("Disrupt").style.overflowX = "hidden";
-
-//     }else{
-//         document.getElementById("Disrupt").style.position = "static";
-//         document.getElementById("ball").style.top = "-50px";
-//     }
-
-//     if(ScrollToTop > 857 && ScrollToTop < 957){
-//         document.getElementById("ball").style.top = `${topValue}px`;
-//     }
-
-//     if (ScrollToTop > 957 && ScrollToTop < 1200) {
-//         document.getElementById("ball").style.width = `${topValue * 12}px`;
-//         document.getElementById("ball").style.height = `${topValue * 12}px`;
-//         document.getElementById("ball").style.top = "50%";
-//         document.getElementById("ball").style.translateY = "-50%";
-//     }else{
-//         document.getElementById("ball").style.width = `${topValue }px`;
-//         document.getElementById("ball").style.height = `${topValue }px`;
-//     }
-//     if(ScrollToTop < 1200){
-//         document.getElementById("Disrupt").style.position = "static";
-//     }
-// });
