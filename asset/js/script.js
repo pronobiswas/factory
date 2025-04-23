@@ -10,34 +10,54 @@ const what_do_i_do_image = document.getElementById('what_do_i_do_image');
 const what_do_i_do_heading = document.getElementById('what_do_i_do_heading');
 const what_do_i_do_pragraph = document.getElementById('what_do_i_do_pragraph');
 
-window.addEventListener("wheel", function(event) {
-  console.log(event.deltaY); // Changed to `deltaY` for clarity
+let isFinishedTaskOne = "false"
 
-  if (event.deltaY < 0) {
-    scrollUpCount++;
-  } else {
-    scrollDownCount++;
+
+
+
+
+// $$$$$$$$ window scroll $$$$$$$$$
+window.addEventListener("scroll", () => {
+  console.log("Scroll Top:", window.scrollY);
+  console.log("scrollDownCounts",scrollDownCount);
+  console.log("scrollUpCount",scrollUpCount);
+  
+  if(ScrollToTop > 700){
+    taskOne();
   }
+  if(ScrollToTop < 1500){
+    taskTwo()
+  }
+  
+  
 
-  console.log("Up:", scrollUpCount, "Down:", scrollDownCount);
+  
 });
 
 
 
+function resetIndicator(item){
+  item.style.width = "20px";
+  item.style.height = "20px";
+  item.style.border = "1px solid transparent";
+  item.innerHTML = "";
+}
 
-window.addEventListener("scroll", () => {
+function taskOne (){
+  console.log("this from task one");
+  
   let ScrollToTop = window.scrollY;
-  console.log("Scroll Top:", window.scrollY);
-  // console.log(scrollUpCount);
-  console.log("scrollDownCounts",scrollDownCount);
-  console.log("scrollUpCount",scrollUpCount);
-  
-  
-  
   let topValue;
   if (ScrollToTop > 800) {
+    console.log("hello");
+    
+    Disrupt.style.position = "fixed";
+    Disrupt.style.top = "0";
+    Disrupt.style.left = "0";
     topValue = Math.round(ScrollToTop - 800);
-    console.log(topValue);
+
+  }else {
+    Disrupt.style.position = "static";
   }
 
   // ===change the ball position===
@@ -54,11 +74,17 @@ window.addEventListener("scroll", () => {
   }
   if(ScrollToTop < 1550){
       document.getElementById("Disrupt").style.position = "static";
+      isFinishedTaskOne = "true";
+      return;
   }
-//   if(ScrollToTop < 1725){
-//       let what_do_i_do = document.getElementById("what_do_i_do");
-//       what_do_i_do.style.position = "static";
-//   }
+}
+// %%%%% task two %%%%%%%%%
+function taskTwo (){
+  console.log("this from task two");
+  let ScrollToTop = window.scrollY;
+  if(ScrollToTop < 1550){
+    document.getElementById("Disrupt").style.position = "static";
+  }
   // =====relese what do i do====
   if(ScrollToTop > 1700){
     what_do_i_do.style.position = "static";
@@ -67,7 +93,7 @@ window.addEventListener("scroll", () => {
     pro_indicator[0].style.border = "1px solid transparent";
     line.style.backgroundSize ='100% 100%'
     pro_indicator[1].innerHTML=''
-}
+  }
   // ====fixed what do i do ====
   if(ScrollToTop > 1785){
       what_do_i_do.style.position = "fixed";
@@ -82,7 +108,7 @@ window.addEventListener("scroll", () => {
       pro_indicator[0].style.backgroundColor ="gray";
       pro_indicator[0].innerHTML ="";
   }
-//  ==1900==discover
+  //  ==1900==discover
   if(ScrollToTop >= 1885){
     document.querySelector('.line').style.backgroundSize ='100% 200%'
     pro_indicator[0].style.width = "40px";
@@ -137,7 +163,7 @@ window.addEventListener("scroll", () => {
     what_do_i_do_image.src = "./asset/images/63.jpeg";
     
   }
-// ==2400==
+  // ==2400==
   if(ScrollToTop >= 2385){
     document.querySelector('.line').style.backgroundSize ='100% 650%'
     
@@ -168,21 +194,26 @@ window.addEventListener("scroll", () => {
   if(ScrollToTop >= 2785){
     what_do_i_do.style.position = "static";
   }
-
-  
-  
- 
-
-  
-  
-  
-});
+}
 
 
+function test(){
+  let topValue;
+  if (ScrollToTop > 800) {
+    topValue = Math.round(ScrollToTop - 800);
+    console.log(topValue);
+  }
 
-function resetIndicator(item){
-  item.style.width = "20px";
-  item.style.height = "20px";
-  item.style.border = "1px solid transparent";
-  item.innerHTML = "";
+  // ===change the ball position===
+  if (ScrollToTop > 857) {
+    document.getElementById("ball").style.top = `${topValue}px`;
+  }
+//   ===increse the ball size===
+  if (ScrollToTop > 957 && ScrollToTop < 1550) {
+      document.getElementById("ball").style.width = `${topValue * 12}px`;
+      document.getElementById("ball").style.height = `${topValue * 12}px`;
+  }else{
+      document.getElementById("ball").style.width = `${topValue }px`;
+      document.getElementById("ball").style.height = `${topValue }px`;
+  }
 }

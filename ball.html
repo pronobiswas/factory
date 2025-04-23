@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #pro_main_Wrapper #Disrupt {
+        position: static;
+        top: 0;
+        width: 100%;
+        min-height: 600px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(1, 64, 119);
+        z-index: 10;
+        overflow: hidden;
+        }
+        #pro_main_Wrapper #Disrupt .Disrupt_wrapper {
+        width: 100%;
+        position: relative;
+        padding: 100px 0;
+        }
+        #pro_main_Wrapper #Disrupt .Disrupt_wrapper #ball {
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border-radius: 50%;
+        mix-blend-mode: difference;
+        }
+        #pro_main_Wrapper #Disrupt .Disrupt_wrapper .disrupted h2 {
+        text-align: center;
+        font-size: 56px;
+        }
+        #pro_main_Wrapper #Disrupt .Disrupt_wrapper .disrupted p {
+        font-size: 16px;
+        max-width: 500px;
+        text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="pro_main_Wrapper">
+        <section id="Disrupt">
+            <div class="Disrupt_wrapper">
+              <div id="ball"></div>
+              <div class="pro_container">
+                <div class="disrupted">
+                  <div class="sticky_text_first">
+                    <h2>Disrupt or be disrupted.</h2>
+                    <p>Change is the only constant.</p>
+                    <p>
+                      If you want to keep up with ever-evolving technology, you have
+                      to disrupt the status quo. Work smarter, not harder. Let
+                      technology be your ally.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+    </div>
+    <script>
+        window.addEventListener("scroll",()=>{
+            let ScrollToTop = window.scrollY;
+            let ball = document.getElementById("ball");
+            let pro_main_Wrapper = document.getElementById("pro_main_Wrapper");
+            let Disrupt = document.getElementById("Disrupt");
+            let topValue;
+            if (ScrollToTop > 800) {
+                topValue = Math.round(ScrollToTop - 800);
+                console.log(topValue);
+            }
+
+            // ===change the ball position===
+            if (ScrollToTop > 857) {
+                document.getElementById("ball").style.top = `${topValue}px`;
+            }
+        });
+    </script>
+
+</body>
+</html>
