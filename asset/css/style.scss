@@ -314,9 +314,10 @@
                 content: "Discover";
                 position: absolute;
                 color: #fff;
-                top: 20px;
-                right: 20px;
+                top: 0px !important;
+                right: 8px !important;
                 transform: rotate(90deg);
+                font-size: 14px;
               }
             }
   
@@ -327,9 +328,10 @@
                 content: "Design";
                 position: absolute;
                 color: #fff;
-                top: 0px;
-                left: 50px;
+                top: 0px !important;
+                left: 15px !important;
                 transform: rotate(90deg);
+                font-size: 14px;
               }
             }
   
@@ -340,22 +342,25 @@
                 content: "Develop";
                 position: absolute;
                 color: #fff;
-                top: 0px;
-                right: 50px;
+                top: 0px !important;
+                right: 8px !important;
                 transform: rotate(90deg);
+                font-size: 14px;
               }
             }
   
             .pro_indicator:nth-child(4) {
               top: 240px !important;
+              transform: rotate(90deg) translateY(20px) !important;
   
               &::after {
                 content: "Direct";
                 position: absolute;
                 color: #fff;
-                top: 0px;
-                left: 50px;
-                transform: rotate(90deg);
+                top: 3px !important;
+                left: 16px !important;
+                transform: rotate(0deg);
+                font-size: 14px;
               }
             }
           }

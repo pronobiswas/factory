@@ -22,16 +22,10 @@ window.addEventListener("scroll", () => {
   console.log("scrollDownCounts",scrollDownCount);
   console.log("scrollUpCount",scrollUpCount);
   
-  if(ScrollToTop > 700){
-    taskOne();
-  }
+  
   if(ScrollToTop < 1500){
     taskTwo()
   }
-  
-  
-
-  
 });
 
 
