@@ -165,7 +165,7 @@ body{
                   transform: translateX(-50%);
                   width: 20px;
                   height: 20px;
-                  background: #000000;
+                  background: gray;
                   border: 1px solid transparent;
                   border-radius: 50%;
                   font-size: 18px;
@@ -284,11 +284,13 @@ body{
         height: 100%;
         display: flex;
         flex-direction: column;
+        padding-top: 0px !important;
+        padding: 0 !important;
   
         .progress_container {
           width: 100% !important;
           height: 150px !important;
-          background-color: #a6a6a600;
+          background-color: #c5080800;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -299,7 +301,7 @@ body{
             width: 2px;
             height: 100% !important;
             min-height: 320px !important;
-            background-color:#5eff00 !important;
+            background-color:gray !important;
             position: relative;
             background: #000000;
             background: linear-gradient(0deg, #535353 0%, #535353 29%, #535353 90%, #ff0000 91%, #ff0000 100%);
@@ -309,7 +311,7 @@ body{
             .pro_indicator {
               position: absolute;
               left: 50%;
-              transform: translateX(-50%);
+              transform: translateX(-50%) rotate(90deg) !important;
               width: 20px;
               height: 20px;
               background: #313636;
@@ -317,10 +319,10 @@ body{
               border-radius: 50%;
               font-size: 18px;
               color: white;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
             }
   
             .pro_indicator:nth-child(1) {
@@ -330,10 +332,10 @@ body{
                 content: "Discover";
                 position: absolute;
                 color: #fff;
-                top: 0px !important;
-                right: 15px !important;
-                transform: rotate(90deg) ;
-                font-size: 14px;
+                top: -60% !important;
+                right:50% !important;
+                transform: translate(50% , -50%) !important;
+                font-size: 16px !important;
               }
             }
   
@@ -344,10 +346,10 @@ body{
                 content: "Design";
                 position: absolute;
                 color: #fff;
-                top: 0px !important;
-                left: 25px !important;
-                transform: rotate(90deg);
-                font-size: 14px;
+                top: 100% !important;
+                left: 50% !important;
+                transform: translate(-50% , 50%) !important;
+                font-size: 16px !important;
               }
             }
   
@@ -358,10 +360,10 @@ body{
                 content: "Develop";
                 position: absolute;
                 color: #fff;
-                top: 0px !important;
-                right: 15px !important;
-                transform: rotate(90deg);
-                font-size: 14px;
+                top: -60% !important;
+                right: 50% !important;
+                transform: translate(50% , -50%) !important;
+                font-size: 16px !important;
               }
             }
   
@@ -373,10 +375,10 @@ body{
                 content: "Direct";
                 position: absolute;
                 color: #fff;
-                top: 3px !important;
-                left: 26px !important;
-                transform: rotate(90deg);
-                font-size: 14px;
+                top: 100% !important;
+                left: 50% !important;
+                transform: translate(-50% , 50%) !important;
+                font-size: 16px !important;
               }
               span{
                 display: inline-block;

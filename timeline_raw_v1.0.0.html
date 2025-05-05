@@ -1,0 +1,573 @@
+<html>
+    <head>
+        
+      <style>
+        #pro_main_Wrapper #what_do_i_do {
+          width: 100% !important;
+          height: calc(100vh + 30px);
+          background-color: rgba(0, 0, 0, 0.6431372549);
+          padding: 58px 0 !important;
+          overflow-x: hidden;
+        }
+        #pro_main_Wrapper #what_do_i_do .pro_container{
+          width: 100%;
+          max-width: 1240px !important;
+          margin: 0 auto;
+        }
+        #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper {
+          width: 100%;
+          height: 100%;
+          display: flex;
+        }
+    
+        #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container {
+          width: 40%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+    
+        #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line {
+          width: 2px;
+          height: 100%;
+          min-height: 700px;
+          background-color: gray;
+          position: relative;
+          background: #000000;
+          background: linear-gradient(0deg, #535353 0%, #535353 29%, #535353 90%, #ff0000 91%, #ff0000 100%);
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+        }
+    
+        #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 20px;
+          height: 20px;
+          background: #313636;
+          border: 1px solid transparent;
+          border-radius: 50%;
+          font-size: 18px;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+    
+        #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(1) {
+          top: 125px;
+        }
+    
+        #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(1)::before {
+          content: "Discover";
+          position: absolute;
+          color: #fff;
+          top: -10px;
+          right: 50px;
+        }
+    
+        #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(2) {
+          top: 270px;
+        }
+    
+        #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(2)::after {
+          content: "Design";
+          position: absolute;
+          color: #fff;
+          top: -10px;
+          left: 50px;
+        }
+    
+        #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(3) {
+          top: 420px;
+        }
+    
+        #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(3)::before {
+          content: "Develop";
+          position: absolute;
+          color: #fff;
+          top: -10px;
+          right: 50px;
+        }
+    
+        #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(4) {
+          top: 570px;
+        }
+    
+        #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(4)::after {
+          content: "Direct";
+          position: absolute;
+          color: #fff;
+          top: -10px;
+          left: 50px;
+        }
+    
+        #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content {
+          background-color: black;
+          width: 60%;
+        }
+    
+        #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content .pro_image_box {
+          width: 590px;
+          height: 405px;
+        }
+    
+        #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content .pro_image_box img {
+          width: 100%;
+          height: 100%;
+          -o-object-fit: cover;
+          object-fit: cover;
+        }
+    
+        #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content h2 {
+          font-size: 76px;
+          line-height: 1;
+          color: #fff;
+          margin: 30px 0;
+          font-weight: 500;
+        }
+    
+        #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content p {
+          font-size: 18px;
+          line-height: 1.1;
+          color: #a6a6a6;
+        }
+        @media (max-width: 768px) {
+      #what_do_i_do {
+        width: 100% !important;
+        height: calc(100vh + 30px);
+        background-color: rgba(0, 0, 0, 0.6431372549);
+        padding: 50px 0;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container {
+        width: 100% !important;
+        height: 150px !important;
+        background-color: rgba(166, 166, 166, 0);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(270deg) translateY(0px);
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line {
+        width: 2px;
+        height: 100% !important;
+        min-height: 320px !important;
+        background-color: #5eff00 !important;
+        position: relative;
+        background: #000000;
+        background: linear-gradient(0deg, #535353 0%, #535353 29%, #535353 90%, #ff0000 91%, #ff0000 100%);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 20px;
+        background: #313636;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        font-size: 18px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(1) {
+        top: 65px !important;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(1)::before {
+        content: "Discover";
+        position: absolute;
+        color: #fff;
+        top: 20px;
+        right: 20px;
+        transform: rotate(90deg);
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(2) {
+        top: 120px !important;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(2)::after {
+        content: "Design";
+        position: absolute;
+        color: #fff;
+        top: 0px;
+        left: 50px;
+        transform: rotate(90deg);
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(3) {
+        top: 180px !important;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(3)::before {
+        content: "Develop";
+        position: absolute;
+        color: #fff;
+        top: 0px;
+        right: 50px;
+        transform: rotate(90deg);
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(4) {
+        top: 240px !important;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(4)::after {
+        content: "Direct";
+        position: absolute;
+        color: #fff;
+        top: 0px;
+        left: 50px;
+        transform: rotate(90deg);
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content {
+        background-color: black;
+        width: 60%;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content .pro_image_box {
+        width: 590px;
+        height: 405px;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content .pro_image_box img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+           object-fit: cover;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content h2 {
+        font-size: 76px;
+        line-height: 1;
+        color: #fff;
+        margin: 30px 0;
+        font-weight: 500;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content p {
+        font-size: 18px;
+        line-height: 1.1;
+        color: #a6a6a6;
+      }
+      
+    @media (max-width: 768px) {
+      #what_do_i_do {
+        width: 100% !important;
+        height: calc(100vh + 30px);
+        background-color: rgba(0, 0, 0, 0.6431372549);
+        padding: 50px 0;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container {
+        width: 100% !important;
+        height: 150px !important;
+        background-color: rgba(166, 166, 166, 0);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(270deg) translateY(0px);
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line {
+        width: 2px;
+        height: 100% !important;
+        min-height: 320px !important;
+        background-color: #5eff00 !important;
+        position: relative;
+        background: #000000;
+        background: linear-gradient(0deg, #535353 0%, #535353 29%, #535353 90%, #ff0000 91%, #ff0000 100%);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 20px;
+        background: #313636;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        font-size: 18px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(1) {
+        top: 65px !important;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(1)::before {
+        content: "Discover";
+        position: absolute;
+        color: #fff;
+        top: 0px !important;
+        right: 15px !important;
+        transform: rotate(90deg);
+        font-size: 14px;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(2) {
+        top: 120px !important;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(2)::after {
+        content: "Design";
+        position: absolute;
+        color: #fff;
+        top: 0px !important;
+        left: 25px !important;
+        transform: rotate(90deg);
+        font-size: 14px;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(3) {
+        top: 180px !important;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(3)::before {
+        content: "Develop";
+        position: absolute;
+        color: #fff;
+        top: 0px !important;
+        right: 15px !important;
+        transform: rotate(90deg);
+        font-size: 14px;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(4) {
+        top: 240px !important;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(4)::after {
+        content: "Direct";
+        position: absolute;
+        color: #fff;
+        top: 3px !important;
+        left: 26px !important;
+        transform: rotate(90deg);
+        font-size: 14px;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content {
+        background-color: rgb(192, 65, 65);
+        width: 100% !important;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content .pro_image_box {
+        width: 100%;
+        height: 100%;
+        max-height: 300px
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content .pro_image_box img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+           object-fit: cover;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content h2#what_do_i_do_heading {
+        font-size: 36px;
+        line-height: 1;
+        color: #fff;
+        margin: 30px 0;
+        font-weight: 500;
+      }
+      #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content p {
+        font-size: 16px;
+        line-height: 1.1;
+        color: #a6a6a6;
+      }
+    }
+    }
+    .test{
+        height: fit-content;
+    }
+      </style>
+    </head>
+    <body>
+        <!-- ====all the style in here==== -->
+  <div id="pro_main_Wrapper">
+
+    <section id="what_do_i_do">
+      <div class="pro_container">
+        <div class="what_do_i_do_wrapper">
+          <div class="progress_container">
+            <div class="line">
+              <div class="pro_indicator"></div>
+              <div class="pro_indicator"></div>
+              <div class="pro_indicator"></div>
+              <div class="pro_indicator"></div>
+            </div>
+          </div>
+          <div class="progress_content">
+            <div class="pro_image_box">
+              <img id="what_do_i_do_image" src="/asset/images/60.jpeg" alt="png" />
+            </div>
+            <div class="pro_text_box">
+              <h2 id="what_do_i_do_heading">Highlights and Challenges</h2>
+              <p id="what_do_i_do_pragraph">
+                Inspiring Design Plan and Plot Many solutions are on the
+                table, but only one is the right one. Bespoke for your
+                business. At this stage, you will get the wireframe, and our
+                project managers will ensure that it runs within the agreed
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </div>
+  <!-- =====all the script write in here===== -->
+  <script>
+    let isFixed = false;
+    let scrollUpCount = 0;
+    let scrollDownCount = 0;
+    
+    window.addEventListener("scroll", () => {
+      let ScrollToTop = window.scrollY;
+      const line = document.querySelector('.line');
+      let what_do_i_do = document.getElementById("what_do_i_do");
+      const pro_indicator = document.querySelectorAll('.pro_indicator');
+      const pro_main_Wrapper = document.getElementById("pro_main_Wrapper");
+      const what_do_i_do_image = document.getElementById('what_do_i_do_image');
+      const what_do_i_do_heading = document.getElementById('what_do_i_do_heading');
+      const what_do_i_do_pragraph = document.getElementById('what_do_i_do_pragraph');
+      const positionFromTop = Math.floor(pro_main_Wrapper.getBoundingClientRect().top + window.scrollY);
+      const containerHeight = document.querySelector('.pro_container').offsetHeight;
+      console.log("positionFromTop",positionFromTop);
+      console.log("ScrollToTop",ScrollToTop);
+      
+     
+      
+      // =====relese what do i do====
+      if (ScrollToTop >= 1600) {
+        what_do_i_do.style.position = "static";
+        pro_indicator[0].style.width = "20px";
+        pro_indicator[0].style.height = "20px";
+        pro_indicator[0].style.border = "1px solid transparent";
+        line.style.backgroundSize = '100% 100%'
+        pro_indicator[1].innerHTML = ''
+      }
+      // ====fixed what do i do ====
+      if (ScrollToTop >= 1700) {
+        what_do_i_do.style.position = "fixed";
+        what_do_i_do.style.width = "100%";
+        what_do_i_do.style.top = "0";
+        what_do_i_do.style.left = "0";
+        what_do_i_do.style.zIndex = "9999";
+        what_do_i_do.style.backgroundColor = "black";
+        what_do_i_do_heading.innerHTML = "Highlights and Challenges";
+        what_do_i_do_image.src = "https://kenrickr67.nightwingers.com/wp-content/uploads/2025/04/62ea3870abd300c868b1d3ef_pexels-fauxels-3183197-min-p-1080.png";
+
+        pro_indicator[0].style.backgroundColor = "gray";
+        pro_indicator[0].innerHTML = "";
+      }
+      //  ==2000==discover
+      if (ScrollToTop >= 1800) {
+        document.querySelector('.line').style.backgroundSize = '100% 200%'
+        pro_indicator[0].style.width = "40px";
+        pro_indicator[0].style.height = "40px";
+        pro_indicator[0].style.border = "3px solid red";
+        pro_indicator[0].innerHTML = '01';
+        pro_indicator[1].innerHTML = '';
+        pro_indicator[1].style.backgroundColor = "gray";
+      }
+      // ==3500==
+      if (ScrollToTop >= 1900) {
+        document.querySelector('.line').style.backgroundSize = '100% 300%';
+        // --change first indicaator--
+        pro_indicator[0].innerHTML = '';
+        pro_indicator[0].style.backgroundColor = "red";
+        pro_indicator[0].style.width = "20px";
+        pro_indicator[0].style.height = "20px";
+        resetIndicator(pro_indicator[1])
+      }
+      // ==2200==design
+      if (ScrollToTop >= 2000) {
+        document.querySelector('.line').style.backgroundSize = '100% 400%';
+        pro_indicator[1].style.width = "40px";
+        pro_indicator[1].style.height = "40px";
+        pro_indicator[1].style.border = "3px solid red";
+        pro_indicator[1].innerHTML = '02';
+        what_do_i_do_heading.innerHTML = "Plan and Plot";
+        what_do_i_do_image.src = "https://kenrickr67.nightwingers.com/wp-content/uploads/2025/04/62ea3870abd300b72bb1d3eb_your-pic-min-p-1080.png";
+
+      }
+      // ==2300==
+      if (ScrollToTop >= 2100) {
+        document.querySelector('.line').style.backgroundSize = '100% 500%';
+        resetIndicator(pro_indicator[2])
+      }
+      // ==2400==develop
+      if (ScrollToTop >= 2200) {
+        document.querySelector('.line').style.backgroundSize = '100% 600%';
+        pro_indicator[2].style.width = "40px";
+        pro_indicator[2].style.height = "40px";
+        pro_indicator[2].style.border = "3px solid red";
+        pro_indicator[2].style.backgroundColor = "gray";
+        pro_indicator[2].innerHTML = '03';
+
+        pro_indicator[1].innerHTML = '';
+        pro_indicator[1].style.border = "1px solid transparent";
+        pro_indicator[1].style.width = "20px";
+        pro_indicator[1].style.height = "20px";
+        pro_indicator[1].style.backgroundColor = "red";
+
+        what_do_i_do_heading.innerHTML = "Shape and Mold";
+        what_do_i_do_image.src = "https://kenrickr67.nightwingers.com/wp-content/uploads/2025/04/62ea3870abd30078ebb1d3f0_pexels-fauxels-3183198-min-p-1080.png";
+
+      }
+      // ==2500==
+      if (ScrollToTop >= 2300) {
+        document.querySelector('.line').style.backgroundSize = '100% 650%'
+
+      }
+      // ==2600==direct
+      if (ScrollToTop >= 2400) {
+        document.querySelector('.line').style.backgroundSize = '100% 750%';
+        resetIndicator(pro_indicator[3])
+        pro_indicator[3].innerHTML = '';
+      }
+      // ==2700==
+      if (ScrollToTop >= 2500) {
+        document.querySelector('.line').style.backgroundSize = '100% 900%';
+        pro_indicator[3].style.width = "40px";
+        pro_indicator[3].style.height = "40px";
+        pro_indicator[3].style.border = "3px solid red";
+        pro_indicator[3].innerHTML = '04';
+        what_do_i_do_heading.innerHTML = "Guide and Assist";
+        what_do_i_do_image.src = "https://kenrickr67.nightwingers.com/wp-content/uploads/2025/04/62ea3870abd3003947b1d3f2_pexels-andrew-neel-2312369-min-p-1080.png";
+        resetIndicator(pro_indicator[2]);
+        pro_indicator[2].style.backgroundColor = "red";
+      }
+      // ==2800==
+      if (ScrollToTop >= 2600) {
+        document.querySelector('.line').style.backgroundSize = '100% 1000%';
+      }
+      // ==2900==
+      if (ScrollToTop >= 2700) {
+        what_do_i_do.style.position = "static";
+        what_do_i_do.style.transition = ".4s all linear";
+
+        what_do_i_do.style.height = "calc(100% + 200px)";
+      }
+
+
+
+
+      function resetIndicator(item){
+        item.style.width = "20px";
+        item.style.height = "20px";
+        item.style.border = "1px solid transparent";
+        item.innerHTML = "";
+      }
+    })
+  </script>
+    </body>
+</html>
