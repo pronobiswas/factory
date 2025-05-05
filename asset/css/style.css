@@ -1,3 +1,10 @@
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 .fixeds {
   position: fixed !important;
   top: 0;
@@ -21,7 +28,6 @@
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: black;
   font-family: Arial, Helvetica, sans-serif;
 }
 #pro_main_Wrapper .pro_container {
@@ -119,7 +125,7 @@
 #pro_main_Wrapper #what_do_i_do {
   width: 100% !important;
   height: calc(100vh + 30px);
-  background-color: rgba(0, 0, 0, 0.6431372549);
+  background-color: #000000;
   padding: 50px 0;
 }
 #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper {
@@ -151,7 +157,7 @@
   transform: translateX(-50%);
   width: 20px;
   height: 20px;
-  background: #313636;
+  background: #000000;
   border: 1px solid transparent;
   border-radius: 50%;
   font-size: 18px;
@@ -168,8 +174,10 @@
   content: "Discover";
   position: absolute;
   color: #fff;
-  top: -10px;
-  right: 50px;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
 }
 #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(2) {
   top: 270px;
@@ -178,8 +186,10 @@
   content: "Design";
   position: absolute;
   color: #fff;
-  top: -10px;
-  left: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%, -50%);
+  font-size: 28px;
 }
 #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(3) {
   top: 420px;
@@ -188,8 +198,10 @@
   content: "Develop";
   position: absolute;
   color: #fff;
-  top: -10px;
-  right: 50px;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
 }
 #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(4) {
   top: 570px;
@@ -198,16 +210,20 @@
   content: "Direct";
   position: absolute;
   color: #fff;
-  top: -10px;
-  left: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%, -50%);
+  font-size: 28px;
 }
 #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content {
   background-color: black;
   width: 60%;
 }
 #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content .pro_image_box {
-  width: 590px;
-  height: 405px;
+  width: 100%;
+  height: 100%;
+  max-width: 590px;
+  max-height: 405px;
 }
 #pro_main_Wrapper #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content .pro_image_box img {
   width: 100%;
@@ -291,7 +307,7 @@
     position: absolute;
     color: #fff;
     top: 0px !important;
-    right: 8px !important;
+    right: 15px !important;
     transform: rotate(90deg);
     font-size: 14px;
   }
@@ -303,7 +319,7 @@
     position: absolute;
     color: #fff;
     top: 0px !important;
-    left: 15px !important;
+    left: 25px !important;
     transform: rotate(90deg);
     font-size: 14px;
   }
@@ -315,30 +331,33 @@
     position: absolute;
     color: #fff;
     top: 0px !important;
-    right: 8px !important;
+    right: 15px !important;
     transform: rotate(90deg);
     font-size: 14px;
   }
   #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(4) {
     top: 240px !important;
-    transform: rotate(90deg) translateY(20px) !important;
   }
   #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(4)::after {
     content: "Direct";
     position: absolute;
     color: #fff;
     top: 3px !important;
-    left: 16px !important;
-    transform: rotate(0deg);
+    left: 26px !important;
+    transform: rotate(90deg);
     font-size: 14px;
   }
+  #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_container .line .pro_indicator:nth-child(4) span {
+    display: inline-block;
+    rotate: 0deg;
+  }
   #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content {
-    background-color: black;
-    width: 60%;
+    background-color: rgb(192, 65, 65);
+    width: 100% !important;
   }
   #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content .pro_image_box {
-    width: 590px;
-    height: 405px;
+    width: 100%;
+    height: 100%;
   }
   #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content .pro_image_box img {
     width: 100%;
@@ -346,15 +365,15 @@
     -o-object-fit: cover;
        object-fit: cover;
   }
-  #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content h2 {
-    font-size: 76px;
+  #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content h2#what_do_i_do_heading {
+    font-size: 36px;
     line-height: 1;
     color: #fff;
     margin: 30px 0;
     font-weight: 500;
   }
   #what_do_i_do .pro_container .what_do_i_do_wrapper .progress_content p {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.1;
     color: #a6a6a6;
   }

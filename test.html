@@ -1,252 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Raiyan Stylish Timeline</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      background: #000;
-      color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      scroll-behavior: smooth;
-    }
-    .rst-section {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      padding: 2rem;
-      overflow: hidden;
-    }
-    .rst-container {
-      display: flex;
-      align-items: center;
-      gap: 4rem;
-      width: 100%;
-      max-width: 1400px;
-      position: relative;
-    }
-    .rst-timeline {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
-    .rst-timeline::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      width: 2px;
-      height: 100%;
-      background: #444;
-      z-index: -1;
-    }
-    .rst-step {
-      color: #777;
-      margin: 2rem 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    .rst-step::before {
-      content: '';
-      position: absolute;
-      top: -3rem;
-      height: 3rem;
-      width: 2px;
-      background: #ff2d55;
-    }
-    .rst-step:first-child::before {
-      display: none;
-    }
-    .rst-step.active .rst-circle {
-      background: #ff2d55;
-      border-color: #ff2d55;
-      transform: scale(1.2);
-    }
-    .rst-step.active .rst-label {
-      color: white;
-      font-weight: bold;
-    }
-    .rst-circle {
-      width: 60px;
-      height: 60px;
-      font-size: 1.2rem;
-      border-radius: 50%;
-      border: 3px solid #666;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: black;
-      color: white;
-      margin-bottom: 0.8rem;
-      transition: all 0.3s ease;
-    }
-    .rst-label {
-      font-size: 1.5rem;
-    }
-    .rst-content {
-      max-width: 700px;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .rst-content.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .rst-image {
-      width: 100%;
-      height: auto;
-      margin-bottom: 2rem;
-    }
-    .rst-heading {
-      font-size: 2.5rem;
-      font-weight: bold;
-    }
-    .rst-text {
-      font-size: 1.2rem;
-      color: #ccc;
-    }
-    .rst-button {
-      margin-top: 2rem;
-      padding: 0.75rem 1.5rem;
-      background: transparent;
-      border: 2px solid #fff;
-      color: #fff;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .rst-button:hover {
-      background: #ff2d55;
-      border-color: #ff2d55;
-      color: white;
-    }
-    @media (max-width: 768px) {
-      .rst-container {
-        flex-direction: column;
-      }
-      .rst-timeline {
-        flex-direction: row;
-        justify-content: space-around;
-        width: 100%;
-        overflow-x: auto;
-        padding: 1rem 0;
-      }
-      .rst-step {
-        margin: 0 1rem;
-      }
-      .rst-content {
-        text-align: center;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="rst-section">
-    <div class="rst-container">
-      <div class="rst-timeline" id="rstTimeline">
-        <!-- Timeline Steps -->
-      </div>
-      <div class="rst-content" id="rstContent">
-        <!-- Dynamic Content -->
-      </div>
-    </div>
-  </div>
-  <script>
-    const timelineData = [
-      {
-        step: "01",
-        label: "Discover",
-        image: "https://via.placeholder.com/700x400.png?text=Discover+Image",
-        heading: "Highlights and Challenges",
-        text: "Find out how your company ranks in the market. What are your strengths and weaknesses? With the help of our business analysts, you’ll come up with a development strategy and a concrete solution for all your pain points.",
-        buttonText: "Explore our work",
-        buttonLink: "#"
-      },
-      {
-        step: "02",
-        label: "Design",
-        image: "https://via.placeholder.com/700x400.png?text=Design+Image",
-        heading: "Creative Structure",
-        text: "We turn your ideas into sleek, user-friendly designs. Experience high-quality visual interfaces and intuitive UX that captures your brand’s essence.",
-        buttonText: "Explore our work",
-        buttonLink: "#"
-      },
-      {
-        step: "03",
-        label: "Develop",
-        image: "https://via.placeholder.com/700x400.png?text=Develop+Image",
-        heading: "Clean Code & Agile Process",
-        text: "Using cutting-edge technologies, we bring your project to life with robust, scalable code following modern development methodologies.",
-        buttonText: "Explore our work",
-        buttonLink: "#"
-      },
-      {
-        step: "04",
-        label: "Direct",
-        image: "https://via.placeholder.com/700x400.png?text=Direct+Image",
-        heading: "Guide and Assist",
-        text: "Getting the software solution isn’t the end of our alliance. We’ll be there along your way to success, advising and supporting you.",
-        buttonText: "Explore our work",
-        buttonLink: "#"
-      }
-    ];
-    const timeline = document.getElementById("rstTimeline");
-    const content = document.getElementById("rstContent");
-    timelineData.forEach((item, index) => {
-      const step = document.createElement("div");
-      step.classList.add("rst-step");
-      if (index === 0) step.classList.add("active");
-      step.dataset.index = index;
-      step.setAttribute("role", "button");
-      step.setAttribute("tabindex", "0");
-      step.innerHTML = `
-        <div class="rst-circle">${item.step}</div>
-        <div class="rst-label">${item.label}</div>
-      `;
-      step.addEventListener("click", () => activateStep(index));
-      timeline.appendChild(step);
-    });
-    function activateStep(index) {
-      document.querySelectorAll(".rst-step").forEach((el, i) => {
-        el.classList.toggle("active", i === index);
-      });
-      const data = timelineData[index];
-      content.classList.remove("show");
-      setTimeout(() => {
-        content.innerHTML = `
-          <img src="${data.image}" class="rst-image" alt="${data.label} section image" />
-          <h2 class="rst-heading">${data.heading}</h2>
-          <p class="rst-text">${data.text}</p>
-          <a href="${data.buttonLink}" class="rst-button">${data.buttonText}</a>
-        `;
-        content.classList.add("show");
-      }, 100);
-    }
-    let scrollTimeout;
-    window.addEventListener("scroll", () => {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        const section = document.querySelector(".rst-section");
-        const bounds = section.getBoundingClientRect();
-        const screenHeight = window.innerHeight;
-        const index = Math.min(
-          timelineData.length - 1,
-          Math.max(0, Math.floor(((screenHeight - bounds.top) / bounds.height) * timelineData.length))
-        );
-        activateStep(index);
-      }, 50);
-    });
-    // Initialize on load
-    activateStep(0);
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="./asset/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="./asset/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <main id="pro_main_Wrapper">
+      <div
+        style="width: 100%; height: 180px; background-color: aliceblue"
+      ></div>
+      <!-- ===what do we do=== -->
+      <section id="what_do_i_do">
+        <div class="pro_container">
+          <div class="what_do_i_do_wrapper">
+            <div class="progress_container">
+              <div class="line">
+                <div class="pro_indicator"></div>
+                <div class="pro_indicator"></div>
+                <div class="pro_indicator"></div>
+                <div class="pro_indicator"></div>
+              </div>
+            </div>
+            <div class="progress_content">
+              <div class="pro_image_box">
+                <img
+                  id="what_do_i_do_image"
+                  src="./asset/images/60.jpeg"
+                  alt="png"
+                />
+              </div>
+              <div class="pro_text_box">
+                <h2 id="what_do_i_do_heading">Highlights and Challenges</h2>
+                <p id="what_do_i_do_pragraph">
+                  Inspiring Design Plan and Plot Many solutions are on the
+                  table, but only one is the right one. Bespoke for your
+                  business. At this stage, you will get the wireframe, and our
+                  project managers will ensure that it runs within the agreed
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        style="width: 100%; height: 1800px; background-color: aliceblue"
+      ></div>
+    </main>
+
+    <script src="./asset/js/script2.js"></script>
+    
+  </body>
 </html>
- 
